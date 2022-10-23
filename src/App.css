@@ -1,0 +1,83 @@
+/* HTML RESET */
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+/* LOGO STYLING */
+.logoContainer {
+    width: 100%;
+    padding: 25px;
+    background: paleturquoise;
+    position: sticky;
+    top: 0px;
+}
+
+.logo {
+    text-align: center;
+}
+
+/* MAIN (NAVBAR AND VIDEO CONTAINER) STYLING*/
+.main {
+    display: flex;
+}
+
+/* NAVBAR STYLING */
+.navbar {
+    width: 75px;
+    height: 100%;
+    align-self: start;
+    margin-top: 50px;
+    position: sticky;
+    top: 90px;
+    background-color: #92BA92;
+}
+
+.navbar i:hover {
+    cursor: pointer;
+}
+
+.navbar-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar-listItem {
+    padding: 20px;
+}
+
+/* VIDEO CONTAINER STYLING */
+.videoContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* VIDEOCARD STYLING */
+.videoCard {
+    width: 350px;
+    height: 280px;
+    margin-top: 50px;
+}
+
+.videoCard-infoContainer {
+    display: flex;
+}
+
+.likeButton {
+    font-size: 25px;
+}
+
+.likeButton:hover {
+    cursor: pointer;
+}
+
+.videoCard-title {
+    margin-left: 10px;
+    padding: 5px;
+    width: 300px;
+}
+
+.videoCard-price {
+    margin-left: auto;
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useEffect, useState } from "react"
 import VideoCard from "./VideoCard"
 
@@ -55,6 +56,9 @@ const VideoContainer = ({ showFavoritesOnly, addCartItems }) => {
         />
     ))
 
+=======
+const VideoContainer = ({ showFavoritesOnly, videoCards, isLoading }) => {
+>>>>>>> 0bfa726 (Adds ability to remove items from cart, moves setData to App component)
     const favoritesOnly = videoCards?.filter((video) => video.props.isFavorite === true)
 
     return (

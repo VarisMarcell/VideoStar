@@ -13,7 +13,7 @@ const VideoCard = (props) => {
             togglePurchased
     } = props
 
-    const handleClick = () => {
+    const handleClickAdd = () => {
         addCartItems()
         togglePurchased()
     }
@@ -30,7 +30,7 @@ const VideoCard = (props) => {
                 } 
                 {   isPurchased ?
                     !isFree && (<i className="bi bi-cart-check-fill addToCartButton"></i>)
-                    : !isFree && (<i className="bi bi-cart-plus addToCartButton" onClick={handleClick}></i>)
+                    : !isFree && (<i className="bi bi-cart-plus addToCartButton" onClick={handleClickAdd}></i>)
                 }
                 <p className="videoCard-title">{ title }</p>
                 { !isFree && <p className="videoCard-price">${ price }</p> }

@@ -13,7 +13,7 @@ function App() {
   const [cartItems, setCartItems] = useState([])
   const [data, setData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
-  const [displayedData, setDisplayedData] = useState([])
+  const [displayedData, setDisplayedData] = useState([data])
 
   useEffect(() => {
       const getData = async () => {

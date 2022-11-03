@@ -20,9 +20,11 @@ const VideoCard = (props) => {
 
     return (
         <div className="videoCard">
-            <video className="video" width={"350"} height={"200"} controls crossOrigin="anonymous" >
+            <div className="videoWrap">
+                <video className="video" width={"360"} height={"202"} /* "only use when the video has been clicked" controls */ crossOrigin="anonymous" >
                 <source src={src} type="video/mp4" />
-            </video>
+                </video>
+            </div>
             <div className="videoCard-infoContainer">
                 {   isFavorite ? 
                     isFree && (<i className="bi bi-heart-fill likeButton" onClick={toggleLike}></i>) 

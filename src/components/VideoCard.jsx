@@ -9,8 +9,14 @@ const VideoCard = (props) => {
             isFavorite, 
             toggleLike, 
             addCartItems, 
-            isPurchased
+            isPurchased, 
+            togglePurchased
     } = props
+
+    const handleClick = () => {
+        addCartItems()
+        togglePurchased()
+    }
 
     return (
         <div className="videoCard">
@@ -23,8 +29,8 @@ const VideoCard = (props) => {
                     : isFree && (<i className="bi bi-heart likeButton" onClick={toggleLike}></i>)  
                 } 
                 {   isPurchased ?
-                    !isFree && (<i class="bi bi-cart-check-fill"></i>)
-                    : !isFree && (<i className="bi bi-cart-plus addToCartButton" onClick={addCartItems}></i>)
+                    !isFree && (<i className="bi bi-cart-check-fill addToCartButton"></i>)
+                    : !isFree && (<i className="bi bi-cart-plus addToCartButton" onClick={handleClick}></i>)
                 }
                 <p className="videoCard-title">{ title }</p>
                 { !isFree && <p className="videoCard-price">${ price }</p> }

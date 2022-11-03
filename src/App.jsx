@@ -11,6 +11,7 @@ function App() {
   const [showCart, setShowCart] = useState(false)
   const [cartItems, setCartItems] = useState([])
 
+
   const toggleFavorites = () => {
     setShowFavoritesOnly(prevShowFavorites => !prevShowFavorites)
   }
@@ -25,6 +26,7 @@ function App() {
         [
           ...prevCartItems, 
           {
+            key: id,
             id: id,
             name: name,
             price: price,

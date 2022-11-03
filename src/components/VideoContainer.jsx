@@ -31,6 +31,15 @@ const VideoContainer = ({ showFavoritesOnly, addCartItems }) => {
         })
     }
 
+    const togglePurchased = (id) => {
+        setData(prevData => {
+            return prevData.map((video) => {
+                return video.id === id ? {...video, isPurchased: !video.isPurchased} : video
+            })
+        })
+    }
+
+
     const videoCards = data?.map((video) => (
         <VideoCard
             key={video.id}
@@ -41,7 +50,8 @@ const VideoContainer = ({ showFavoritesOnly, addCartItems }) => {
             isFavorite={video.isFavorite}
             toggleLike={() => toggleLike(video.id)}
             isPurchased={video.isPurchased}
-            addCartItems={() => addCartItems(video.name, video.price, video.url, video.id)}
+            addCartItems={() => addCartItems(video.name, video.price, video.url, video.id, video.isPurchased)}
+            togglePurchased={() => togglePurchased(video.id)}
         />
     ))
 

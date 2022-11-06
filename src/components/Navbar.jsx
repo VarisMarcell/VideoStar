@@ -1,4 +1,6 @@
-const Navbar = ({ toggleFavorites, toggleCart }) => {
+import { useState } from "react"
+
+const Navbar = ({ toggleFavorites, toggleCart, toggleFilterMenu }) => {
 
     return (
         <div className="navbar">
@@ -7,11 +9,11 @@ const Navbar = ({ toggleFavorites, toggleCart }) => {
                 <ul className="navbar-list">
                     <li className="navbar-listItem" onClick={ toggleCart }><i className="bi bi-cart3"></i></li>
                     <li className="navbar-listItem" onClick={ toggleFavorites }><i className="bi bi-heart"></i></li>
-                    <li className="navbar-listItem"><i className="bi bi-sort-down-alt"></i></li>
+                    <li className="navbar-listItem" onClick={ toggleFilterMenu }><i className="bi bi-sort-down-alt"></i></li>
                 </ul>
-                <div className="navbar-filter">
+                <form className="navbar-filter">
                     <input type="text" placeholder="Search here" />
-                </div>
+                </form>
 
             </nav> 
             

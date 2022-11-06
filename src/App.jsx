@@ -4,6 +4,7 @@ import VideoContainer from './components/VideoContainer'
 import VideoCard from './components/VideoCard'
 import Navbar from './components/Navbar'
 import Cart from './components/Cart'
+import FilterMenu from './components/FilterMenu'
 
 function App() {
 
@@ -12,7 +13,15 @@ function App() {
   const [cartItems, setCartItems] = useState([])
   const [data, setData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
-  const [displayedData, setDisplayedData] = useState([data])
+  const [showFilterMenu, setShowFilterMenu] = useState(false)
+  const [form, setForm] = useState(
+      {
+        sort: "",
+        showFreeOrPaid: "",
+        showDuration: ""
+      }
+  )
+
 
   useEffect(() => {
       const getData = async () => {
@@ -38,6 +47,7 @@ function App() {
         price={video.price}
         isFree={video.isFree}
         isFavorite={video.isFavorite}
+        duration={video.duration}
         toggleLike={() => toggleLike(video.id)}
         isPurchased={video.isPurchased}
         addCartItems={() => addCartItems(video.name, video.price, video.url, video.id, video.isPurchased)}
@@ -67,6 +77,10 @@ function App() {
 
   const toggleCart = () => {
     setShowCart(prevShowCart => !prevShowCart)
+  }
+
+  const toggleFilterMenu = () => {
+    setShowFilterMenu(prevShowFilterMenu => !prevShowFilterMenu)
   }
 
   const addCartItems = (name, price, url, id, isPurchased) => {
@@ -102,6 +116,7 @@ function App() {
         <Navbar 
           toggleFavorites={() => toggleFavorites()}
           toggleCart={() => toggleCart()}
+          toggleFilterMenu={() => toggleFilterMenu()}
         />
         {showCart && 
           <Cart 
@@ -110,11 +125,19 @@ function App() {
             removeCartItems={removeCartItems}
           />
         }
+        {showFilterMenu &&
+          <FilterMenu
+            toggleFilterMenu={() => toggleFilterMenu()}
+            form={form}
+            setForm={setForm}
+          />
+        }
         <VideoContainer 
           videoCards={videoCards}
           isLoading={isLoading}
           showFavoritesOnly={showFavoritesOnly}
           addCartItems={addCartItems}
+          form={form}
         />
       </div>
     </div>

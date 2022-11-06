@@ -18,12 +18,27 @@ const VideoCard = (props) => {
         togglePurchased()
     }
 
+    // const handleHover = () => {
+    //     var figure = $(".video").hover( hoverVideo, hideVideo );
+
+    //     function hoverVideo() {  
+    //         $('video', this).get(0).play(); 
+    //     }
+        
+    //     function hideVideo() {
+    //         $('video', this).get(0).pause(); 
+    //     }
+    // }
+
     return (
         <div className="videoCard">
             <div className="videoWrap">
-                <video className="video" width={"360"} height={"202"} /* "only use when the video has been clicked" controls */ crossOrigin="anonymous" >
-                <source src={src} type="video/mp4" />
+                <video className="video" width={"360"} height={"202"} /* "only use when the video has been clicked" controls */ crossOrigin="anonymous" preload="auto">
+                <source src={src} type="video/mp4"/>
                 </video>
+                <div id="unpaid">
+                    <i className="bi bi-currency-dollar"></i>
+                </div>
             </div>
             <div className="videoCard-infoContainer">
                 {   isFavorite ? 

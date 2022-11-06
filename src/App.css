@@ -46,12 +46,14 @@ body {
 
 /* LOGO STYLING */
 .logoContainer {
+    display: flex;
     width: 100%;
     padding: 25px;
     /* background: transparent; */
     position: sticky;
     top: 0px;
     background: linear-gradient(to bottom, #525E75 0%, rgba(101, 101, 101, 0.5) 100%);
+    justify-content: space-between;
 }
 
 .logo {
@@ -71,18 +73,19 @@ body {
 
 /* MAIN (NAVBAR AND VIDEO CONTAINER) STYLING*/
 .main {
-    display: flex;
+    /* display: flex; */
 }
 
 /* NAVBAR STYLING */
+
 .navbar {
-    width: 75px;
-    height: 100%;
-    align-self: start;
-    margin-top: 50px;
+    width: 100%;
+    height: 75px;
+    /* align-self: start; */
+    /* margin-top: 50px; */
     position: sticky;
-    top: 90px;
-    background-color: #92BA92;
+    /* top: 90px; */
+    /* background-color: #92BA92; */
 }
 
 .navbar i:hover {
@@ -90,7 +93,13 @@ body {
 }
 
 .navbar-list {
+    display: flex;
     list-style-type: none;
+    padding: 0;
+}
+
+.navbar-form {
+    display: flex;
     padding: 0;
 }
 

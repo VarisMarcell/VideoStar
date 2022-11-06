@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import VideoContainer from './components/VideoContainer'
 import VideoCard from './components/VideoCard'
-import Logo from './components/Logo'
 import Navbar from './components/Navbar'
 import Cart from './components/Cart'
 
@@ -99,7 +98,6 @@ function App() {
 
   return (
     <div className="App">
-      <Logo />
       <div className="main">
         <Navbar 
           toggleFavorites={() => toggleFavorites()}

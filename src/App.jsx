@@ -18,7 +18,8 @@ function App() {
       {
         sort: "",
         showFreeOrPaid: "",
-        showDuration: ""
+        showDuration: "",
+        search: ""
       }
   )
 
@@ -117,6 +118,8 @@ function App() {
           toggleFavorites={() => toggleFavorites()}
           toggleCart={() => toggleCart()}
           toggleFilterMenu={() => toggleFilterMenu()}
+          form={form}
+          setForm={setForm}
         />
         {showCart && 
           <Cart 

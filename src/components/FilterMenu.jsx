@@ -11,6 +11,16 @@ const FilterMenu = ({ toggleFilterMenu, form, setForm }) => {
         })
     }
 
+    const handleClick = () => {
+        setForm(
+            {
+                sort: "",
+                showFreeOrPaid: "",
+                showDuration: ""
+            }
+        )
+    }
+
 
     return (
         <div className="filterMenuContainer">
@@ -140,6 +150,7 @@ const FilterMenu = ({ toggleFilterMenu, form, setForm }) => {
                         <label htmlFor=">30s">Greater than 30 seconds</label>
                     </div>
                 </form>
+                <p className="clearFilters" onClick={handleClick}>Clear all filters</p>
             </div>
         </div>
     )  

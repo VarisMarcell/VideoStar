@@ -1,6 +1,16 @@
 import { useState } from "react"
 
-const Navbar = ({ toggleFavorites, toggleCart, toggleFilterMenu }) => {
+const Navbar = ({ toggleFavorites, toggleCart, toggleFilterMenu, form, setForm }) => {
+
+    const handleChange = (event) => {
+        const { name, value } = event.target 
+        setForm(prevForm => {
+            return {
+                ...prevForm,
+                [name]: value
+            }
+        })
+    }
 
     return (
         <div className="navbar">
@@ -12,7 +22,7 @@ const Navbar = ({ toggleFavorites, toggleCart, toggleFilterMenu }) => {
                     <li className="navbar-listItem" onClick={ toggleFilterMenu }><i className="bi bi-sort-down-alt"></i></li>
                 </ul>
                 <form className="navbar-filter">
-                    <input type="text" placeholder="Search here" />
+                    <input type="text" placeholder="Search here" value={form.search} name="search" onChange={handleChange} />
                 </form>
 
             </nav> 

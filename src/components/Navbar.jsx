@@ -21,7 +21,7 @@ const Navbar = ({ toggleFavorites, toggleCart, toggleFilterMenu, form, setForm }
                     <li className="navbar-listItem" onClick={ toggleFavorites }><i className="bi bi-heart"></i></li>
                     <li className="navbar-listItem" onClick={ toggleFilterMenu }><i className="bi bi-sort-down-alt"></i></li>
                 </ul>
-                <form className="navbar-filter">
+                <form className="searchBar">
                     <input type="text" placeholder="Search here" value={form.search} name="search" onChange={handleChange} />
                 </form>
 

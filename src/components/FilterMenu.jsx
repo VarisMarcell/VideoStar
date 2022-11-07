@@ -16,11 +16,11 @@ const FilterMenu = ({ toggleFilterMenu, form, setForm }) => {
             {
                 sort: "",
                 showFreeOrPaid: "",
-                showDuration: ""
+                showDuration: "",
+                search: ""
             }
         )
     }
-
 
     return (
         <div className="filterMenuContainer">
@@ -50,6 +50,7 @@ const FilterMenu = ({ toggleFilterMenu, form, setForm }) => {
                         />
                         <label htmlFor="lowToHigh">Low to High</label>
                     </div>
+
                     <div className="sortDuration">
                         <p>Duration: </p>
                         <input 
@@ -72,6 +73,7 @@ const FilterMenu = ({ toggleFilterMenu, form, setForm }) => {
                         />
                         <label htmlFor="longToShort">Long to Short</label>
                     </div>
+
                     <div className="sortAlphabetically">
                         <p>By title: </p>
                         <input 
@@ -94,6 +96,7 @@ const FilterMenu = ({ toggleFilterMenu, form, setForm }) => {
                         />
                         <label htmlFor="zToA">zToA</label>
                     </div>
+
                     <h3>Show:</h3>
                     <div className="showFreeOrPaid">
                         <p>Price: </p>

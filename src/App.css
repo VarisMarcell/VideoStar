@@ -295,6 +295,7 @@ body {
     height: 25px;
     text-align: center;
     cursor: pointer;
+    margin-left: auto;
 }
 
 .sortPrice, .sortDuration, .sortAlphabetically, .showFreeOrPaid, .showDuration {
@@ -304,4 +305,11 @@ body {
 
 .clearFilters {
     cursor: pointer;
+    margin-left: auto;
+}
+
+.searchBar {
+    height: 15px;
+    width: 250px;
+    border-radius: 3px;
 }

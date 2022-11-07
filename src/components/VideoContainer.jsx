@@ -1,6 +1,21 @@
 import { useState } from "react"
 
 const VideoContainer = ({ showFavoritesOnly, videoCards, isLoading, form }) => {
+
+    if (showFavoritesOnly) {
+        videoCards = videoCards.filter(video => {
+            return video.props.isFavorite === true
+        })
+    } 
+
+    if (form.search !== "") {
+        videoCards = videoCards.filter(video => {
+            if (video.props.title.toLowerCase().includes(form.search.toLowerCase())) {
+                return video
+            }
+        })
+    }
+
     if (form.sort === "highToLow") {
         videoCards = videoCards.sort((a, b) => {
             if (a.props.price > b.props.price) {
@@ -87,15 +102,7 @@ const VideoContainer = ({ showFavoritesOnly, videoCards, isLoading, form }) => {
         })
     }
 
-
     return (
-        // showFavoritesOnly ? 
-        // (<div className="videoContainer">
-        //     {currentCards}
-        // </div>) :
-        // (<div className="videoContainer">
-        //     { !isLoading ? videoCards : "Loading..." }
-        // </div>)
         <div className="videoContainer">
             { !isLoading ? videoCards : "Loading..."}
         </div>

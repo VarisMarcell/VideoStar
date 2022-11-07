@@ -33,10 +33,10 @@ const VideoCard = (props) => {
     return (
         <div className="videoCard">
             <div className="videoWrap">
-                <video className="video" width={"360"} height={"202"} /* "only use when the video has been clicked" controls */ crossOrigin="anonymous" preload="auto">
+                <video className="video unpaid" width={"360"} height={"202"} /* "only use when the video has been clicked" controls */ crossOrigin="anonymous" preload="auto">
                 <source src={src} type="video/mp4"/>
                 </video>
-                <div id="unpaid">
+                <div id="unpaidIcon">
                     <i className="bi bi-currency-dollar"></i>
                 </div>
             </div>

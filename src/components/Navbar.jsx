@@ -68,9 +68,7 @@ const Navbar = ({ toggleFavorites, toggleCart, toggleFilterMenu, form, setForm }
                     </div>
                     <input className="searchBar" type="text" placeholder="Search here" value={form.search} name="search" onChange={handleChange} />
                 </form>
-
             </nav> 
-            
         </div>
     )
 }

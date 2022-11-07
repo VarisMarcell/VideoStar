@@ -88,6 +88,10 @@ body {
     /* background-color: #92BA92; */
 }
 
+.logoContainer {
+    display: flex;
+}
+
 .navbar i:hover {
     cursor: pointer;
 }
@@ -115,12 +119,11 @@ body {
 .sortAndFilter {
     display: flex;
     height: 30px;
-    width: 250px;
     border-radius: 3px;
 }
 
 .searchBar {
-    margin-right: 500px;
+    width: 250px;
 }
 
 /* VIDEO CONTAINER STYLING */

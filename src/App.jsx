@@ -4,7 +4,7 @@ import VideoContainer from './components/VideoContainer'
 import VideoCard from './components/VideoCard'
 import Navbar from './components/Navbar'
 import Cart from './components/Cart'
-import FilterMenu from './components/FilterMenu'
+// import FilterMenu from './components/FilterMenu'
 
 function App() {
 
@@ -128,13 +128,13 @@ function App() {
             removeCartItems={removeCartItems}
           />
         }
-        {showFilterMenu &&
+        {/* {showFilterMenu &&
           <FilterMenu
             toggleFilterMenu={() => toggleFilterMenu()}
             form={form}
             setForm={setForm}
           />
-        }
+        } */}
         <VideoContainer 
           videoCards={videoCards}
           isLoading={isLoading}

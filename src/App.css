@@ -202,7 +202,7 @@ body {
     font-size: 64pt;
 }
 
-#unpaid {
+.videoUnpaid {
     width: auto;
     height: auto;
     filter: blur(5px);
@@ -243,7 +243,7 @@ body {
 
 /* CART STYLING */
 .cartContainer {
-    position: fixed;
+    position: absolute;
     background: #00000050;
     width: 100%;
     height: 100vh;

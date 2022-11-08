@@ -4,7 +4,6 @@ import VideoContainer from './components/VideoContainer'
 import VideoCard from './components/VideoCard'
 import Navbar from './components/Navbar'
 import Cart from './components/Cart'
-// import FilterMenu from './components/FilterMenu'
 
 function App() {
 
@@ -13,7 +12,6 @@ function App() {
   const [cartItems, setCartItems] = useState([])
   const [data, setData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
-  const [showFilterMenu, setShowFilterMenu] = useState(false)
   const [form, setForm] = useState(
       {
         sort: "",
@@ -80,10 +78,6 @@ function App() {
     setShowCart(prevShowCart => !prevShowCart)
   }
 
-  const toggleFilterMenu = () => {
-    setShowFilterMenu(prevShowFilterMenu => !prevShowFilterMenu)
-  }
-
   const addCartItems = (name, price, url, id, isPurchased) => {
     setCartItems(prevCartItems => {
       return (
@@ -128,13 +122,6 @@ function App() {
             removeCartItems={removeCartItems}
           />
         }
-        {/* {showFilterMenu &&
-          <FilterMenu
-            toggleFilterMenu={() => toggleFilterMenu()}
-            form={form}
-            setForm={setForm}
-          />
-        } */}
         <VideoContainer 
           videoCards={videoCards}
           isLoading={isLoading}

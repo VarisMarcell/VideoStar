@@ -12,6 +12,7 @@ function App() {
   const [cartItems, setCartItems] = useState([])
   const [data, setData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [theater, setTheater] = useState(false)
   const [form, setForm] = useState(
       {
         sort: "",
@@ -51,8 +52,13 @@ function App() {
         isPurchased={video.isPurchased}
         addCartItems={() => addCartItems(video.name, video.price, video.url, video.id, video.isPurchased)}
         togglePurchased={() => togglePurchased(video.id)}
+        toggleTheater={() => toggleTheater()}
     />
   ))
+
+  const toggleTheater = () => {
+    setTheater(prevTheater => !prevTheater)
+  }
 
   const toggleLike = (id) => {
     setData(prevData => {
@@ -128,6 +134,7 @@ function App() {
           showFavoritesOnly={showFavoritesOnly}
           addCartItems={addCartItems}
           form={form}
+          theater={theater}
         />
       </div>
     </div>

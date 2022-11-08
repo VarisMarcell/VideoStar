@@ -1,6 +1,4 @@
-import { useState } from "react"
-
-const Navbar = ({ toggleFavorites, toggleCart, toggleFilterMenu, form, setForm }) => {
+const Navbar = ({ toggleFavorites, toggleCart, form, setForm }) => {
 
     const handleChange = (event) => {
         const { name, value } = event.target 
@@ -12,6 +10,10 @@ const Navbar = ({ toggleFavorites, toggleCart, toggleFilterMenu, form, setForm }
         })
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault()
+    }
+
     return (
         <div className="navbar">
             <nav className="logoContainer">
@@ -19,9 +21,8 @@ const Navbar = ({ toggleFavorites, toggleCart, toggleFilterMenu, form, setForm }
                 <ul className="navbar-list">
                     <li className="navbar-listItem" onClick={ toggleCart }><i className="bi bi-cart3"></i></li>
                     <li className="navbar-listItem" onClick={ toggleFavorites }><i className="bi bi-heart"></i></li>
-                    {/* <li className="navbar-listItem" onClick={ toggleFilterMenu }><i className="bi bi-sort-down-alt"></i></li> */}
                 </ul>
-                <form className="sortAndFilter">
+                <form className="sortAndFilter" onSubmit={handleSubmit}>
                     <div className="filterFreePaidContainer">
                         <label className="labelFilterFreePaid" htmlFor="filterFreePaid">Free or Paid</label>
                         <select 
@@ -30,7 +31,7 @@ const Navbar = ({ toggleFavorites, toggleCart, toggleFilterMenu, form, setForm }
                             onChange={handleChange}
                             name="showFreeOrPaid"
                         >
-                            <option value="">-- Choose --</option>
+                            <option value="">All</option>
                             <option value="showFree">Show free</option>
                             <option value="showPaid">Show paid</option>
                         </select>
@@ -43,7 +44,7 @@ const Navbar = ({ toggleFavorites, toggleCart, toggleFilterMenu, form, setForm }
                             onChange={handleChange}
                             name="showDuration"
                         >
-                            <option value="">-- Choose --</option>
+                            <option value="">All</option>
                             <option value="<15s">Less than 15 seconds</option>
                             <option value="15-30s">15 to 30 seconds</option>
                             <option value=">30s">More than 30 seconds</option>
@@ -57,7 +58,7 @@ const Navbar = ({ toggleFavorites, toggleCart, toggleFilterMenu, form, setForm }
                             onChange={handleChange}
                             name="sort"
                         >
-                            <option value="">-- Choose --</option>
+                            <option value="">All</option>
                             <option value="highToLow">Price: High to Low</option>
                             <option value="lowToHigh">Price: Low to High</option>
                             <option value="shortToLong">Length: Short to Long</option>
@@ -66,7 +67,13 @@ const Navbar = ({ toggleFavorites, toggleCart, toggleFilterMenu, form, setForm }
                             <option value="zToA">Title: Z to A</option>
                         </select>
                     </div>
-                    <input className="searchBar" type="text" placeholder="Search here" value={form.search} name="search" onChange={handleChange} />
+                    <input 
+                        className="searchBar" 
+                        type="text" 
+                        placeholder="Search here" 
+                        value={form.search} name="search" 
+                        onChange={handleChange}
+                    />
                 </form>
             </nav> 
         </div>

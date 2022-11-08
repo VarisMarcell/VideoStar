@@ -1,6 +1,7 @@
 import { useState } from "react"
+import Theater from "./Theater"
+const VideoContainer = ({ showFavoritesOnly, videoCards, isLoading, form, theater }) => {
 
-const VideoContainer = ({ showFavoritesOnly, videoCards, isLoading, form }) => {
 
     if (showFavoritesOnly) {
         videoCards = videoCards.filter(video => {
@@ -104,6 +105,9 @@ const VideoContainer = ({ showFavoritesOnly, videoCards, isLoading, form }) => {
 
     return (
         <div className="videoContainer">
+            { theater &&
+                <Theater />
+            }
             { !isLoading ? videoCards : "Loading..."}
         </div>
     )

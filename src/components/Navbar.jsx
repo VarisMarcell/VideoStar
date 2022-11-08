@@ -16,8 +16,7 @@ const Navbar = ({ toggleFavorites, toggleCart, form, setForm }) => {
 
     return (
         <div className="navbar">
-            <nav className="logoContainer">
-                <h3 className="logo">videostar</h3>
+            <nav className="navBarContainer">
                 <ul className="navbar-list">
                     <li className="navbar-listItem" onClick={ toggleCart }><i className="bi bi-cart3"></i></li>
                     <li className="navbar-listItem" onClick={ toggleFavorites }><i className="bi bi-heart"></i></li>

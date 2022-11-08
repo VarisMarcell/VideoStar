@@ -7,11 +7,11 @@ const VideoCard = (props) => {
             price, 
             isFree, 
             isFavorite, 
+            toggleTheater,
             toggleLike, 
             addCartItems, 
             isPurchased, 
             togglePurchased,
-            toggleTheater
     } = props
 
 
@@ -21,7 +21,6 @@ const VideoCard = (props) => {
     }
 
     const handleClickTheater = () => {
-        console.log("handleClickTheater")
         toggleTheater()
     }
     // const handleHover = () => {

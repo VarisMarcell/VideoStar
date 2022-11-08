@@ -2,7 +2,6 @@ import { useState } from "react"
 import Theater from "./Theater"
 const VideoContainer = ({ showFavoritesOnly, videoCards, isLoading, form, theater }) => {
 
-
     if (showFavoritesOnly) {
         videoCards = videoCards.filter(video => {
             return video.props.isFavorite === true
@@ -105,9 +104,6 @@ const VideoContainer = ({ showFavoritesOnly, videoCards, isLoading, form, theate
 
     return (
         <div className="videoContainer">
-            { theater &&
-                <Theater />
-            }
             { !isLoading ? videoCards : "Loading..."}
         </div>
     )

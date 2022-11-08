@@ -4,6 +4,7 @@ import VideoContainer from './components/VideoContainer'
 import VideoCard from './components/VideoCard'
 import Navbar from './components/Navbar'
 import Cart from './components/Cart'
+import Logo from './components/Logo'
 
 function App() {
 
@@ -12,7 +13,6 @@ function App() {
   const [cartItems, setCartItems] = useState([])
   const [data, setData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
-  const [theater, setTheater] = useState(false)
   const [form, setForm] = useState(
       {
         sort: "",
@@ -29,7 +29,7 @@ function App() {
               const data = await fetch("https://videostar.dacoder.io")
               const jsonData = await data.json()
               setData(jsonData.map((video) => {
-                  return {...video, isFavorite: false}
+                  return {...video, isFavorite: false, theaterMode: false}
               }))
               setIsLoading(false)
           } catch(error) {
@@ -48,16 +48,22 @@ function App() {
         isFree={video.isFree}
         isFavorite={video.isFavorite}
         duration={video.duration}
+        theaterMode={video.theaterMode}
+        toggleTheater={() => toggleTheater(video.id)}
         toggleLike={() => toggleLike(video.id)}
         isPurchased={video.isPurchased}
         addCartItems={() => addCartItems(video.name, video.price, video.url, video.id, video.isPurchased)}
         togglePurchased={() => togglePurchased(video.id)}
-        toggleTheater={() => toggleTheater()}
     />
   ))
 
-  const toggleTheater = () => {
-    setTheater(prevTheater => !prevTheater)
+  const toggleTheater = (id) => {
+    setData(prevData => {
+      return prevData.map((video) => {
+        console.log(video.theaterMode)
+        return video.id === id ? {...video, theater: !video.theater} : video
+      })
+    })
   }
 
   const toggleLike = (id) => {
@@ -114,6 +120,7 @@ function App() {
   return (
     <div className="App">
       <div className="main">
+        <Logo />
         <Navbar 
           toggleFavorites={() => toggleFavorites()}
           toggleCart={() => toggleCart()}
@@ -134,7 +141,6 @@ function App() {
           showFavoritesOnly={showFavoritesOnly}
           addCartItems={addCartItems}
           form={form}
-          theater={theater}
         />
       </div>
     </div>

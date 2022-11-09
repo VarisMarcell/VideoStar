@@ -36,7 +36,7 @@ const Navbar = ({ toggleFavorites, toggleCart, form, setForm }) => {
                         </select>
                     </div>
                     <div className="filterDurationContainer">
-                        <label className="labelFilterDuration" htmlFor="filterDuration">Filter by duration</label>
+                        <label className="labelFilterDuration" htmlFor="filterDuration">Filter by Duration</label>
                         <select
                             id="filterDuration"
                             value={form.showDuration}

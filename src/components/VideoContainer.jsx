@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Theater from "./Theater"
-const VideoContainer = ({ showFavoritesOnly, videoCards, isLoading, form, displayTheaterMode, setDisplayTheaterMode }) => {
+const VideoContainer = ({ showFavoritesOnly, videoCards, isLoading, form, displayTheaterMode }) => {
 
     if (showFavoritesOnly) {
         videoCards = videoCards.filter(video => {
@@ -111,7 +111,7 @@ const VideoContainer = ({ showFavoritesOnly, videoCards, isLoading, form, displa
                 <video width="70%" height="500px" controls crossOrigin="anonymous" className="video">
                     <source src={targetVideo[0].props.src} type="video/mp4" />
                 </video>
-                <p className="exitTheater" onClick={setDisplayTheaterMode}>X</p>
+                <p className="exitTheater">X</p>
             </div>
             
         )

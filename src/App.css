@@ -162,7 +162,6 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     overflow: hidden;
-    /* margin-right: 10px; */
     /* box-shadow: 5px 5px #1e1e1e; */
     /* background: linear-gradient(325deg, rgba(55, 55, 55, 0.8), #fc8646); */
     background-color: transparent;
@@ -177,7 +176,8 @@ body {
 }
 
 .videoCard:hover {
-    scale: 120%;
+    scale: 110%;
+    z-index: 25;
 }
 
 .videoWrap {
@@ -225,6 +225,7 @@ body {
 
 .likeButton:hover, .addToCartButton:hover {
     cursor: pointer;
+    scale: 110%;
 }
 
 .videoCard-title {

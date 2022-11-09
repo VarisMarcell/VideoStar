@@ -33,7 +33,7 @@ const VideoCard = (props) => {
     // }
 
     return (
-        <div className="videoCard" >
+        <div className="videoCard" onContextMenu={(event) => { event.preventDefault() }}>
             <div className="videoWrap" onClick={isPurchased ? toggleTheater : undefined} >
                 <video className={`${!isPurchased ? "videoUnpaid" : "" }`} width={"360"} height={"202"} /* "only use when the video has been clicked" controls */ crossOrigin="anonymous" preload="auto">
                 <source src={src} type="video/mp4"/>

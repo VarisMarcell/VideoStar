@@ -322,5 +322,23 @@ body {
 }
 
 /* THEATER MODE STYLING */
+.theaterContainer {
+    display: flex;
+    background-color: #181a18;
+    width: 100%;
+    height: 10%;
+}
 
+.video {
+    display: block;
+    margin: 0 auto;
+}
+
+.exitTheater {
+    font-size: 25px;
+    color: white;
+    align-self: flex-start;
+    margin-top: 65px;
+    margin-right: 65px;
+}
 

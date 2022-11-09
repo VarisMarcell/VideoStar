@@ -145,6 +145,7 @@ function App() {
           addCartItems={addCartItems}
           form={form}
           displayTheaterMode={displayTheaterMode}
+          setDisplayTheaterMode={() => setDisplayTheaterMode(prevTheaterMode => !prevTheaterMode)}
         />
       </div>
     </div>

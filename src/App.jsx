@@ -13,6 +13,7 @@ function App() {
   const [cartItems, setCartItems] = useState([])
   const [data, setData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [displayTheaterMode, setDisplayTheaterMode] = useState(false)
   const [form, setForm] = useState(
       {
         sort: "",
@@ -61,15 +62,17 @@ function App() {
     setData(prevData => {
       return prevData.map((video) => {
         console.log(video.theaterMode)
-        return video.id === id ? {...video, theater: !video.theater} : video
+        return video.id === id ? {...video, theaterMode: !video.theaterMode} : video
       })
     })
+    setDisplayTheaterMode(prevDisplayTheaterMode => !prevDisplayTheaterMode)
   }
+
 
   const toggleLike = (id) => {
     setData(prevData => {
         return prevData.map((video) => {
-            return video.id === id ? {...video, isFavorite: !video.isFavorite} : video
+          return video.id === id ? {...video, isFavorite: !video.isFavorite} : video
         })
     })
   }
@@ -141,6 +144,7 @@ function App() {
           showFavoritesOnly={showFavoritesOnly}
           addCartItems={addCartItems}
           form={form}
+          displayTheaterMode={displayTheaterMode}
         />
       </div>
     </div>

@@ -5,7 +5,7 @@ const Cart = ({ toggleCart, cartItems, removeCartItems }) => {
             <div className="cartItems">
                 <div className="removeFromCart" onClick={() => removeCartItems(video.id)}>X</div>
                 <p>{video.name}</p>
-                <p>{video.price}</p>
+                <p>${video.price}</p>
             </div>
         )
     })
@@ -16,7 +16,8 @@ const Cart = ({ toggleCart, cartItems, removeCartItems }) => {
         <div className="cartContainer">
             <div className="cart">
                 <div className="cart-header">
-                    <p>Total: {total.toFixed(2)}</p>
+                    <p>Total: ${total.toFixed(2)}</p>
+                    <button>Purchase</button>
                     <div className="exitCart" onClick={ toggleCart }>X</div>
                 </div>
                 <div className="cart-videos">{currentCart}</div>

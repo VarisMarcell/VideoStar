@@ -5,13 +5,14 @@ import VideoCard from './components/VideoCard'
 import Navbar from './components/Navbar'
 import Cart from './components/Cart'
 import Logo from './components/Logo'
+import RecommendedVideoCards from './components/RecommendedVideoCards'
 
 function App() {
 
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false)
   const [showCart, setShowCart] = useState(false)
   const [cartItems, setCartItems] = useState([])
-  const [data, setData] = useState(null)
+  const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [displayTheaterMode, setDisplayTheaterMode] = useState(false)
   const [form, setForm] = useState(
@@ -43,6 +44,7 @@ function App() {
   const videoCards = data?.map((video) => (
     <VideoCard
         key={video.id}
+        id={video.id}
         title={video.name}
         src={video.url}
         price={video.price}
@@ -111,6 +113,7 @@ function App() {
     })
   }
 
+
   const removeCartItems = (id) => {
     togglePurchased(id)
     setCartItems(prevCartItems => {
@@ -138,6 +141,11 @@ function App() {
             removeCartItems={removeCartItems}
           />
         }
+        <RecommendedVideoCards
+          data={data}
+          addCartItems={addCartItems}
+          togglePurchased={togglePurchased}
+        />
         <VideoContainer 
           videoCards={videoCards}
           isLoading={isLoading}
@@ -145,7 +153,8 @@ function App() {
           addCartItems={addCartItems}
           form={form}
           displayTheaterMode={displayTheaterMode}
-          setDisplayTheaterMode={() => setDisplayTheaterMode(prevTheaterMode => !prevTheaterMode)}
+          setDisplayTheaterMode={() => setDisplayTheaterMode(prevDisplayTheaterMode => !prevDisplayTheaterMode)}
+          toggleTheater={toggleTheater}
         />
       </div>
     </div>

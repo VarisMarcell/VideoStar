@@ -18,8 +18,8 @@ const Navbar = ({ toggleFavorites, toggleCart, form, setForm }) => {
         <div className="navbar">
             <nav className="navBarContainer">
                 <ul className="navbar-list">
-                    <li className="navbar-listItem" onClick={ toggleCart }><i className="bi bi-cart3"></i></li>
-                    <li className="navbar-listItem" onClick={ toggleFavorites }><i className="bi bi-heart"></i></li>
+                    <li className="navbar-listItem addToCartButton" onClick={ toggleCart }><i className="bi bi-cart3"></i></li>
+                    <li className="navbar-listItem likeButton" onClick={ toggleFavorites }><i className="bi bi-heart"></i></li>
                 </ul>
                 <form className="sortAndFilter" onSubmit={handleSubmit}>
                     <div className="filterFreePaidContainer">

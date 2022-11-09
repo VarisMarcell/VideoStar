@@ -97,10 +97,6 @@ body {
     display: flex;
 }
 
-.navBarContainer {
-    display: flex;
-}
-
 .navbar i:hover {
     cursor: pointer;
 }
@@ -132,9 +128,30 @@ body {
 }
 
 .searchBar {
-    width: 250px;
-    height: 25px;
+    width: 10%;
+    /* height: 25px; */
     margin-top: 25px;
+
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url("https://www.w3schools.com/css/searchicon.png");
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+}
+
+.searchBar:focus {
+    width: 40%;
+}
+
+@media only screen and (max-width: 750px) {
+    .sortAndFilter {
+        flex-direction: column;
+    }
 }
 
 /* VIDEO CONTAINER STYLING */
@@ -221,6 +238,7 @@ body {
 .likeButton, .addToCartButton {
     font-size: 25px;
     margin-left: 10px;
+    color: white;
 }
 
 .likeButton:hover, .addToCartButton:hover {

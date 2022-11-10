@@ -209,9 +209,6 @@ select:focus {
     }
 }
 
-/* SHOPPING CART */
-
-
 /* VIDEO CONTAINER STYLING */
 .videoContainer, .recommendedContainer {
     display: flex;
@@ -333,6 +330,7 @@ select:focus {
     top: 0;
     left: 0;
     z-index: 2;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .cart {
@@ -342,17 +340,35 @@ select:focus {
     height: auto;
     max-height: 70vh;
     margin-top: calc(100vh - 85vh - 20px);
-    background: #fff;
-    border-radius: 4px;
+    background: #525E75;
+    border-radius: 10px;
     padding: 20px;
-    border: 1px solid #999;
+    /* border: 1px solid #999; */
     overflow: auto;
     z-index: 3;
+    color: white;
 }
 
 .cart-header {
     display: flex;
     justify-content: space-between;
+}
+
+#purchase {
+    height: 35px;
+    margin-bottom: 15px;
+    transition: 0.5s;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid #92BA92;
+    background-color: white;
+}
+
+#purchase:hover {
+    color: white;
+    background-color: #92BA92;
+    scale: 110%;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .exitCart {

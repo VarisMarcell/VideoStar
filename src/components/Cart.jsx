@@ -17,7 +17,7 @@ const Cart = ({ toggleCart, cartItems, removeCartItems }) => {
             <div className="cart">
                 <div className="cart-header">
                     <p>Total: ${total.toFixed(2)}</p>
-                    <button>Purchase</button>
+                    <button id="purchase">Purchase</button>
                     <div className="exitCart" onClick={ toggleCart }>X</div>
                 </div>
                 <div className="cart-videos">{currentCart}</div>

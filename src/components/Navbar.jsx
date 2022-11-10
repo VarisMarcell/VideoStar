@@ -1,5 +1,6 @@
 const Navbar = ({ toggleFavorites, toggleCart, form, setForm, showFavoritesOnly }) => {
 
+    /* Sets and maintains the filters and searching based on a controlled form */
     const handleChange = (event) => {
         const { name, value } = event.target 
         setForm(prevForm => {
@@ -10,10 +11,12 @@ const Navbar = ({ toggleFavorites, toggleCart, form, setForm, showFavoritesOnly 
         })
     }
 
+    /* Makes sure the controlled form doesn't clear on enter */
     const handleSubmit = (event) => {
         event.preventDefault()
     }
 
+    /* Returns the navbar with cart icon, favorites icon, free/paid filter, duration filter, sorting, and search bar */
     return (
         <div className="navbar">
             <nav className="navBarContainer">

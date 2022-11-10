@@ -1,5 +1,6 @@
 const Cart = ({ toggleCart, cartItems, removeCartItems }) => {
 
+    /* An array of videos that are currently in the cart */
     const currentCart = cartItems.map((video) => {
         return (
             <div className="cartItems">
@@ -10,8 +11,10 @@ const Cart = ({ toggleCart, cartItems, removeCartItems }) => {
         )
     })
 
+    /* Price total of all items in cart */
     let total = cartItems.reduce((prev, current) => prev + current.price, 0)
 
+    /* Returns a cart with the total price, a "purchase" button, and an exit button */
     return (
         <div className="cartContainer">
             <div className="cart">

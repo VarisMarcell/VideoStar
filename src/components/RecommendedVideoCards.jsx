@@ -2,7 +2,7 @@ import VideoCard from "./VideoCard"
 
 const RecommendedVideoCards = ({ data, addCartItems, togglePurchased }) => {
 
-
+    /* Displays the "for you" videos */
     return (
         <div className="recommendedContainer">
             <h1>For you:</h1>

@@ -10,9 +10,11 @@ const VideoCard = (props) => {
             addCartItems, 
             isPurchased, 
             togglePurchased,
+            duration,
+            isLoading
     } = props
 
-
+    /* When cart icon is clicked, adds video to cart and toggles the isPurchased property*/
     const handleClickAdd = () => {
         addCartItems()
         togglePurchased()
@@ -30,6 +32,7 @@ const VideoCard = (props) => {
     //     }
     // }
 
+    /* Returns the video card, displaying a blurred image if not purchased */
     return (
         <div className="videoCard" onContextMenu={(event) => { event.preventDefault() }}>
             <div className="videoWrap" onClick={isPurchased ? toggleTheater : undefined} >

@@ -8,7 +8,6 @@ import Logo from './components/Logo'
 import RecommendedVideoCards from './components/RecommendedVideoCards'
 
 function App() {
-
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false)
   const [showCart, setShowCart] = useState(false)
   const [cartItems, setCartItems] = useState([])
@@ -24,7 +23,7 @@ function App() {
       }
   )
 
-
+  /* Imports all the videos from the API */
   useEffect(() => {
       const getData = async () => {
           try {
@@ -41,6 +40,8 @@ function App() {
       getData()
   }, [])
 
+  /* Sets each video card with properties provided from the API, along with the 
+  functions to toggle theater mode, to toggle like, and to add the item to the cart */
   const videoCards = data?.map((video) => (
     <VideoCard
         key={video.id}
@@ -60,17 +61,18 @@ function App() {
     />
   ))
 
+  /* Determines the video to display in theater mode based on the id (argument), and toggles theater mode*/
   const toggleTheater = (id) => {
     setData(prevData => {
       return prevData.map((video) => {
-        console.log(video.theaterMode)
         return video.id === id ? {...video, theaterMode: !video.theaterMode} : video
       })
     })
     setDisplayTheaterMode(prevDisplayTheaterMode => !prevDisplayTheaterMode)
   }
 
-
+  /* When a video is liked, changes the property isFavorite to the opposite of previous value 
+  based on the id argument*/
   const toggleLike = (id) => {
     setData(prevData => {
         return prevData.map((video) => {
@@ -79,6 +81,8 @@ function App() {
     })
   }
 
+  /* When a video is added to cart, changes the property isPurchased to opposite of previous value 
+  based on the id argument*/
   const togglePurchased = (id) => {
       setData(prevData => {
           return prevData.map((video) => {
@@ -87,14 +91,19 @@ function App() {
       })
   }
 
+  /* Displays only favorited videos */
   const toggleFavorites = () => {
     setShowFavoritesOnly(prevShowFavorites => !prevShowFavorites)
   }
 
+  /* Displays the cart */
   const toggleCart = () => {
     setShowCart(prevShowCart => !prevShowCart)
   }
 
+  /* Sets the cart items to the previous items, plus the new item being added 
+  Accepts arguments name, price, url, id, and isPurchased, which are properties 
+  of the video that are used in the cart and for cart functionality */
   const addCartItems = (name, price, url, id, isPurchased) => {
     setCartItems(prevCartItems => {
       return (
@@ -113,11 +122,10 @@ function App() {
     })
   }
 
-
+  /* Removes an item from the cart based on the id argument */
   const removeCartItems = (id) => {
     togglePurchased(id)
     setCartItems(prevCartItems => {
-      console.log(prevCartItems)
       return prevCartItems.filter(video => video.id !== id)
     })
   }

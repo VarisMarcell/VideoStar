@@ -72,7 +72,7 @@ body {
     /* margin-top: 50px; */
     /* position: sticky; */
     /* top: 90px; */
-    background: linear-gradient(45deg, #92ba92c7 10%, #78938A 100%);
+    background: linear-gradient(45deg, #92ba92c7 10%, #78938ad1 100%);
     z-index: 0;
     /* display: flex;
     flex-direction: rows;
@@ -208,6 +208,9 @@ select:focus {
         width: 200px;
     }
 }
+
+/* SHOPPING CART */
+
 
 /* VIDEO CONTAINER STYLING */
 .videoContainer, .recommendedContainer {

@@ -1,4 +1,4 @@
-const Navbar = ({ toggleFavorites, toggleCart, form, setForm }) => {
+const Navbar = ({ toggleFavorites, toggleCart, form, setForm, showFavoritesOnly }) => {
 
     const handleChange = (event) => {
         const { name, value } = event.target 
@@ -19,7 +19,12 @@ const Navbar = ({ toggleFavorites, toggleCart, form, setForm }) => {
             <nav className="navBarContainer">
                 <ul className="navbar-list">
                     <li className="navbar-listItem addToCartButton" onClick={ toggleCart }><i className="bi bi-cart3"></i></li>
-                    <li className="navbar-listItem likeButton" onClick={ toggleFavorites }><i className="bi bi-heart"></i></li>
+                    {!showFavoritesOnly && 
+                        <li className="navbar-listItem likeButton" onClick={ toggleFavorites }><i className="bi bi-heart"></i></li>
+                    }
+                    {showFavoritesOnly &&
+                        <li className="navbar-listItem likeButton" onClick={ toggleFavorites }><i className="bi bi-heart-fill"></i></li>
+                    }
                 </ul>
                 <form className="sortAndFilter" onSubmit={handleSubmit}>
                     <div className="filterFreePaidContainer">
@@ -36,7 +41,7 @@ const Navbar = ({ toggleFavorites, toggleCart, form, setForm }) => {
                         </select>
                     </div>
                     <div className="filterDurationContainer">
-                        <label className="labelFilterDuration" htmlFor="filterDuration">Filter by Duration</label>
+                        <label className="labelFilterDuration" htmlFor="filterDuration">Filter by duration</label>
                         <select
                             id="filterDuration"
                             value={form.showDuration}

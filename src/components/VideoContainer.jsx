@@ -1,5 +1,3 @@
-import { useState } from "react"
-import Theater from "./Theater"
 const VideoContainer = ({ showFavoritesOnly, videoCards, isLoading, form, displayTheaterMode, setDisplayTheaterMode, toggleTheater }) => {
 
     if (showFavoritesOnly) {

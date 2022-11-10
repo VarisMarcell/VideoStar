@@ -133,6 +133,7 @@ function App() {
           toggleFilterMenu={() => toggleFilterMenu()}
           form={form}
           setForm={setForm}
+          showFavoritesOnly={showFavoritesOnly}
         />
         {showCart && 
           <Cart 
@@ -141,11 +142,13 @@ function App() {
             removeCartItems={removeCartItems}
           />
         }
-        <RecommendedVideoCards
-          data={data}
-          addCartItems={addCartItems}
-          togglePurchased={togglePurchased}
-        />
+        {!showFavoritesOnly &&
+          <RecommendedVideoCards
+            data={data}
+            addCartItems={addCartItems}
+            togglePurchased={togglePurchased}
+          />
+        }
         <VideoContainer 
           videoCards={videoCards}
           isLoading={isLoading}

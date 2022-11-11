@@ -5,7 +5,7 @@ const Cart = ({ toggleCart, cartItems, removeCartItems }) => {
         return (
             <div className="cartItems">
                 <div className="removeFromCart" onClick={() => removeCartItems(video.id)}>X</div>
-                <p>{video.name}</p>
+                <p id="cartVideoName">{video.name}</p>
                 <p>${video.price}</p>
             </div>
         )

@@ -11,7 +11,6 @@ const VideoCard = (props) => {
             isPurchased, 
             togglePurchased,
             duration,
-            isLoading
     } = props
 
     /* When cart icon is clicked, adds video to cart and toggles the isPurchased property*/
@@ -58,7 +57,7 @@ const VideoCard = (props) => {
                 <p className="videoCard-title">{ title }</p>
                 { !isFree && <p className="videoCard-price">${ price }</p> }
             </div>
-        </div>
+        </div>                       
     )
 }
 

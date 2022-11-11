@@ -58,6 +58,7 @@ function App() {
         isPurchased={video.isPurchased}
         addCartItems={() => addCartItems(video.name, video.price, video.url, video.id, video.isPurchased)}
         togglePurchased={() => togglePurchased(video.id)}
+        isLoading={isLoading}
     />
   ))
 

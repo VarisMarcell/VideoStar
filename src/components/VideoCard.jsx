@@ -10,7 +10,6 @@ const VideoCard = (props) => {
             addCartItems, 
             isPurchased, 
             togglePurchased,
-            duration,
     } = props
 
     /* When cart icon is clicked, adds video to cart and toggles the isPurchased property*/
@@ -18,18 +17,6 @@ const VideoCard = (props) => {
         addCartItems()
         togglePurchased()
     }
-
-    // const handleHover = () => {
-    //     var figure = $(".video").hover( hoverVideo, hideVideo );
-
-    //     function hoverVideo() {  
-    //         $('video', this).get(0).play(); 
-    //     }
-        
-    //     function hideVideo() {
-    //         $('video', this).get(0).pause(); 
-    //     }
-    // }
 
     /* Returns the video card, displaying a blurred image if not purchased */
     return (

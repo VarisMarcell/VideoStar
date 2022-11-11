@@ -23,7 +23,7 @@ function App() {
       }
   )
 
-  /* Imports all the videos from the API */
+  /* Imports all the videos from the API on mount, setting the isLoading state */
   useEffect(() => {
       const getData = async () => {
           try {

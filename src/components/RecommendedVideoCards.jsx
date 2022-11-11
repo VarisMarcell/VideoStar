@@ -30,6 +30,7 @@ const RecommendedVideoCards = ({ data, addCartItems, togglePurchased }) => {
                         )
                     })
                 }
+            <div className="seperation"></div>
         </div>
     )
 }

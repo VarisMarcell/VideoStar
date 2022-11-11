@@ -286,6 +286,14 @@ select:focus {
     text-shadow: 1px 1px #1e1e1e;
 }
 
+/* SEPERATION LINE */
+.seperation {
+    width: 95%;
+    height: 2px;
+    background-color: #92BA92;
+    border-radius: 5px;
+}
+
 /* CART STYLING */
 .cartContainer {
     position: fixed;
